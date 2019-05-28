@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1346.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.BalanceController">
+   <top>
+      <HBox prefHeight="120.0" prefWidth="1330.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logo" fitHeight="102.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="400.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="companyInformation" alignment="CENTER" prefHeight="104.0" prefWidth="278.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" right="30.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="376.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#assets" prefHeight="62.0" prefWidth="174.0" text="Assets">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="16.0" right="30.0" top="60.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#liabilities" prefHeight="62.0" prefWidth="174.0" text="Liabilities">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="16.0" right="30.0" top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#patrimonies" prefHeight="62.0" prefWidth="174.0" text="Patrimonies">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="16.0" right="30.0" top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="390.0" prefWidth="248.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#testBalance" prefHeight="66.0" prefWidth="228.0" text="Test Balance">
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="25.0" left="15.0" right="30.0" top="60.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#BalanceSheet" prefHeight="66.0" prefWidth="216.0" text="Balance Sheet">
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="25.0" left="15.0" right="30.0" top="30.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <VBox prefHeight="82.0" prefWidth="1346.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="89.0" prefWidth="1346.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="165.0" text="Sort By ">
+                     <font>
+                        <Font name="Berlin Sans FB" size="26.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="250.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#sortCode" prefHeight="62.0" prefWidth="174.0" text="Code">
+                     <font>
+                        <Font name="Berlin Sans FB" size="26.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#sortName" prefHeight="62.0" prefWidth="174.0" text="Name">
+                     <font>
+                        <Font name="Berlin Sans FB" size="26.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#saveInformation" prefHeight="40.0" prefWidth="174.0" text="Save">
+                     <font>
+                        <Font name="Berlin Sans FB" size="26.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="250.0" right="30.0" top="30.0" />
+                     </HBox.margin>
+                     <effect>
+                        <InnerShadow color="#00bbff99" />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <SplitPane fx:id="slipPane" dividerPositions="0.7" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="479.0" prefWidth="574.0">
+               <children>
+                  <ScrollPane layoutX="-2.0" layoutY="-1.0" prefHeight="477.0" prefWidth="615.0">
+                     <content>
+                        <TableView fx:id="table" onMouseClicked="#handleRowSelect" prefHeight="475.0" prefWidth="612.0">
+                           <columns>
+                              <TableColumn fx:id="code" prefWidth="101.66665649414062" text="Code" />
+                              <TableColumn fx:id="name" prefWidth="206.33334350585938" text="Name" />
+                              <TableColumn fx:id="debit" prefWidth="166.33331298828125" text="Debit" />
+                              <TableColumn fx:id="credit" prefWidth="135.66668701171875" text="Credit" />
+                           </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="430.0" prefWidth="288.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="17.0" prefHeight="37.0" prefWidth="145.0" text="Name">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameTF" editable="false" layoutX="26.0" layoutY="48.0" prefHeight="27.0" prefWidth="220.0" />
+                  <TextField fx:id="codeTF" editable="false" layoutX="30.0" layoutY="94.0" prefHeight="26.0" prefWidth="219.0" />
+                  <Label layoutX="26.0" layoutY="69.0" prefHeight="37.0" prefWidth="145.0" text="Code">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="debitTF" layoutX="94.0" layoutY="377.0" />
+                  <TextField fx:id="creditTF" layoutX="95.0" layoutY="403.0" />
+                  <Button layoutX="61.0" layoutY="434.0" mnemonicParsing="false" onAction="#addBalance" prefHeight="37.0" prefWidth="95.0" text="Add">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="31.0" layoutY="378.0" prefHeight="22.0" prefWidth="53.0" text="Debit">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="398.0" prefHeight="30.0" prefWidth="55.0" text="Credit">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="142.0" prefHeight="22.0" prefWidth="53.0" text="Debit">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="168.0" layoutY="138.0" prefHeight="30.0" prefWidth="55.0" text="Credit">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="341.0" prefHeight="30.0" prefWidth="81.0" text="Balance">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="balance" layoutX="111.0" layoutY="348.0" prefHeight="18.0" prefWidth="135.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="listDebit" editable="false" layoutX="18.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="181.0" prefWidth="105.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea fx:id="listCredit" editable="false" layoutX="139.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="181.0" prefWidth="112.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
